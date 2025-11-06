@@ -1,0 +1,648 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ABC AUTO — Demo</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <link href="style.css" rel="stylesheet">
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg bg-white sticky-top">
+  <div class="container">
+    <a class="navbar-brand fw-bold" href="#">
+      <img src="https://via.placeholder.com/40" class="me-2"> ABC AUTO
+    </a>
+
+    <button class="navbar-toggler" type="button"
+            data-bs-toggle="collapse" data-bs-target="#mainNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="mainNav">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0 text-center">
+        <li class="nav-item"><a class="nav-link" href="#">Каталог авто</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Авто с пробегом</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Кредит</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Контакты</a></li>
+      </ul>
+
+      <button class="btn btn-danger ms-lg-3">
+        Позвонить
+      </button>
+    </div>
+  </div>
+</nav>
+
+
+<header class="container my-4 hero">
+  <div class="row g-4 align-items-center">
+
+    <div class="col-lg-8">
+      <div id="heroSlider" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+
+          <div class="carousel-item active">
+            <div class="row align-items-center">
+              <div class="col-md-6">
+                <h2 class="fw-bold">Грандиозная распродажа!</h2>
+                <p>Лучшие цены на автомобили</p>
+                <button class="btn btn-red mt-2">Подробнее</button>
+              </div>
+              <div class="col-md-6 text-center">
+                <img src="https://via.placeholder.com/500x250?text=Car1"
+                     class="img-fluid rounded" alt="">
+              </div>
+            </div>
+          </div>
+
+          <div class="carousel-item">
+            <div class="row align-items-center">
+              <div class="col-md-6">
+                <h2 class="fw-bold">Новые поступления</h2>
+                <p>Автомобили уже в наличии!</p>
+                <button class="btn btn-red mt-2">Выбрать авто</button>
+              </div>
+              <div class="col-md-6 text-center">
+                <img src="https://via.placeholder.com/500x250?text=Car2"
+                     class="img-fluid rounded" alt="">
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <button class="carousel-control-prev" type="button"
+                data-bs-target="#heroSlider" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon"></span>
+        </button>
+
+        <button class="carousel-control-next" type="button"
+                data-bs-target="#heroSlider" data-bs-slide="next">
+          <span class="carousel-control-next-icon"></span>
+        </button>
+
+      </div>
+    </div>
+
+
+    <div class="col-lg-4">
+      <div class="quick-form">
+        <h5 class="fw-semibold mb-3">Быстрый подбор авто</h5>
+
+        <form class="needs-validation" novalidate>
+          <div class="mb-2">
+            <select class="form-select" required>
+              <option value="">Марка</option>
+              <option>Kia</option>
+              <option>Skoda</option>
+            </select>
+            <div class="invalid-feedback">Выберите марку</div>
+          </div>
+
+          <div class="mb-2">
+            <select class="form-select" required>
+              <option value="">Модель</option>
+              <option>Rio</option>
+              <option>Octavia</option>
+            </select>
+            <div class="invalid-feedback">Выберите модель</div>
+          </div>
+
+          <button class="btn btn-red w-100" type="submit">
+            Подобрать авто
+          </button>
+        </form>
+
+      </div>
+    </div>
+
+  </div>
+</header>
+
+<section class="container my-5">
+  <h3 class="text-center fw-bold mb-4">
+    Автомобили в наличии с ПТС
+  </h3>
+
+  <div class="row g-4">
+
+    <div class="col-12 col-sm-6 col-lg-4">
+      <div class="car-card p-3 position-relative">
+        <span class="badge bg-danger position-absolute top-2 end-2 card-badge">
+          Выгодно
+        </span>
+
+        <img src="https://via.placeholder.com/420x220?text=Skoda"
+             class="img-fluid rounded mb-3" alt="">
+
+        <h6 class="fw-semibold mb-1">Skoda Octavia 1.6 MPI MT Active</h6>
+        <p class="text-danger fw-bold mb-2">
+          от 1 615 000 ₽
+        </p>
+
+        <div class="d-flex gap-2">
+          <a href="#" class="btn btn-outline-secondary w-50 btn-sm">
+            Подробнее
+          </a>
+
+          <button class="btn btn-red w-50 btn-sm"
+                  data-bs-toggle="modal" data-bs-target="#buyModal">
+            Купить
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-12 col-sm-6 col-lg-4">
+      <div class="car-card p-3 position-relative">
+        <img src="https://via.placeholder.com/420x220?text=Kia"
+             class="img-fluid rounded mb-3">
+        <h6 class="fw-semibold mb-1">Kia Rio X-Line</h6>
+        <p class="text-danger fw-bold mb-2">от 1 280 000 ₽</p>
+        <div class="d-flex gap-2">
+          <a href="#" class="btn btn-outline-secondary w-50 btn-sm">
+            Подробнее
+          </a>
+          <button class="btn btn-red w-50 btn-sm"
+                  data-bs-toggle="modal" data-bs-target="#buyModal">
+            Купить
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-12 col-sm-6 col-lg-4">
+      <div class="car-card p-3 position-relative">
+        <img src="https://via.placeholder.com/420x220?text=Toyota"
+             class="img-fluid rounded mb-3">
+        <h6 class="fw-semibold mb-1">Toyota Camry</h6>
+        <p class="text-danger fw-bold mb-2">от 3 150 000 ₽</p>
+        <div class="d-flex gap-2">
+          <a href="#" class="btn btn-outline-secondary w-50 btn-sm">
+            Подробнее
+          </a>
+          <button class="btn btn-red w-50 btn-sm"
+                  data-bs-toggle="modal" data-bs-target="#buyModal">
+            Купить
+          </button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="text-center mt-4">
+    <button class="btn btn-outline-dark px-5 py-2">
+      Показать ещё
+    </button>
+  </div>
+</section>
+
+<div class="modal fade" id="buyModal" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content p-3">
+      <h5 class="fw-bold mb-3">Оставьте заявку</h5>
+      <form class="needs-validation" novalidate>
+
+        <input type="text" class="form-control mb-2"
+               placeholder="Ваше имя" required>
+        <div class="invalid-feedback">Введите имя</div>
+
+        <input type="tel" class="form-control mb-3"
+               placeholder="Телефон" required>
+        <div class="invalid-feedback">Введите телефон</div>
+
+        <button class="btn btn-red w-100" type="submit">
+          Отправить
+        </button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<section class="container my-5">
+
+  <div class="d-flex justify-content-between align-items-center mb-3">
+    <h3 class="fw-bold">Наши подборки</h3>
+
+    <div class="d-flex gap-2">
+      <button class="btn btn-outline-dark btn-sm" 
+              data-bs-target="#picksCarousel" data-bs-slide="prev">‹</button>
+      <button class="btn btn-outline-dark btn-sm"
+              data-bs-target="#picksCarousel" data-bs-slide="next">›</button>
+    </div>
+  </div>
+
+  <div id="picksCarousel" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+
+      <div class="carousel-item active">
+        <div class="row g-4">
+          
+          <div class="col-12 col-md-4">
+            <div class="pick-card shadow-sm">
+              <img src="https://via.placeholder.com/400x200?text=Family+Cars"
+                   class="img-fluid rounded-top" alt="">
+              <div class="p-3">
+                <h6 class="fw-semibold">Семейные автомобили</h6>
+                <button class="btn btn-red btn-sm mt-2">Подробнее</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-12 col-md-4">
+            <div class="pick-card shadow-sm">
+              <img src="https://via.placeholder.com/400x200?text=Travel"
+                   class="img-fluid rounded-top">
+              <div class="p-3">
+                <h6 class="fw-semibold">Для путешествий</h6>
+                <button class="btn btn-red btn-sm mt-2">Подробнее</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-12 col-md-4">
+            <div class="pick-card shadow-sm">
+              <img src="https://via.placeholder.com/400x200?text=Urban"
+                   class="img-fluid rounded-top">
+              <div class="p-3">
+                <h6 class="fw-semibold">Городские авто</h6>
+                <button class="btn btn-red btn-sm mt-2">Подробнее</button>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+>
+      <div class="carousel-item">
+        <div class="row g-4">
+
+          <div class="col-12 col-md-4">
+            <div class="pick-card shadow-sm">
+              <img src="https://via.placeholder.com/400x200?text=Crossovers"
+                   class="img-fluid rounded-top">
+              <div class="p-3">
+                <h6 class="fw-semibold">Кроссоверы</h6>
+                <button class="btn btn-red btn-sm mt-2">Подробнее</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-12 col-md-4">
+            <div class="pick-card shadow-sm">
+              <img src="https://via.placeholder.com/400x200?text=Eco"
+                   class="img-fluid rounded-top">
+              <div class="p-3">
+                <h6 class="fw-semibold">Экономичные авто</h6>
+                <button class="btn btn-red btn-sm mt-2">Подробнее</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-12 col-md-4">
+            <div class="pick-card shadow-sm">
+              <img src="https://via.placeholder.com/400x200?text=Premium"
+                   class="img-fluid rounded-top">
+              <div class="p-3">
+                <h6 class="fw-semibold">Премиум-класс</h6>
+                <button class="btn btn-red btn-sm mt-2">Подробнее</button>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</section>
+
+<section class="container my-5">
+
+  <h3 class="fw-bold mb-4">Отзывы</h3>
+
+ 
+  <ul class="nav nav-tabs mb-3" id="reviewsTab" role="tablist">
+    <li class="nav-item">
+      <button class="nav-link active" id="tab-yandex"
+              data-bs-toggle="tab" data-bs-target="#content-yandex"
+              type="button" role="tab">
+        Яндекс Карты
+      </button>
+    </li>
+
+    <li class="nav-item">
+      <button class="nav-link" id="tab-site"
+              data-bs-toggle="tab" data-bs-target="#content-site"
+              type="button" role="tab">
+        Сайт отзывов
+      </button>
+    </li>
+
+    <li class="nav-item">
+      <button class="nav-link" id="tab-google"
+              data-bs-toggle="tab" data-bs-target="#content-google"
+              type="button" role="tab">
+        Google Maps
+      </button>
+    </li>
+  </ul>
+
+
+  <div class="tab-content">
+
+
+    <div class="tab-pane fade show active" id="content-yandex" role="tabpanel">
+      <div class="review-card p-3">
+        <h6 class="fw-bold">Сергей Васильев</h6>
+        <p class="small text-muted">⭐ 5.0</p>
+        <p class="mb-0 small">
+          Отличный салон, подобрали машину быстро и выгодно. Спасибо!
+        </p>
+      </div>
+    </div>
+
+
+    <div class="tab-pane fade" id="content-site" role="tabpanel">
+      <div class="review-card p-3">
+        <p class="mb-0 small">Отзывы с сайтов скоро появятся.</p>
+      </div>
+    </div>
+
+
+    <div class="tab-pane fade" id="content-google" role="tabpanel">
+      <div class="review-card p-3">
+        <p class="mb-0 small">Отзывы Google обновляются…</p>
+      </div>
+    </div>
+
+  </div>
+
+</section>
+
+<section class="beat-offer-bg my-5 py-5 text-white">
+  <div class="container">
+
+    <div class="row align-items-center g-4">
+
+      <div class="col-lg-6 text-center text-lg-start">
+        <h2 class="fw-bold mb-3">
+          Перебьём предложение от конкурентов!
+        </h2>
+        <p class="mb-0">
+          Наши специалисты подберут для вас самую выгодную цену и условия!
+        </p>
+      </div>
+
+      <div class="col-lg-6">
+        <form class="needs-validation" novalidate>
+
+          <div class="row g-3">
+
+            <div class="col-12 col-md-6">
+              <input type="text" class="form-control" required
+                     placeholder="Ваше имя">
+              <div class="invalid-feedback">Введите имя</div>
+            </div>
+
+            <div class="col-12 col-md-6">
+              <input type="tel" class="form-control" required
+                     placeholder="Телефон">
+              <div class="invalid-feedback">Введите телефон</div>
+            </div>
+
+          </div>
+
+          <button class="btn btn-light fw-semibold mt-3 w-100 w-md-auto px-4 py-2"
+                  type="submit">
+            Узнать свою выгоду →
+          </button>
+
+        </form>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<section class="container my-5">
+
+  <div class="d-flex justify-content-between align-items-center mb-3">
+    <h3 class="fw-bold">Спецпредложения</h3>
+
+    <a href="#" class="btn btn-outline-dark btn-sm">
+      Смотреть все →
+    </a>
+  </div>
+
+  <div class="row g-4">
+
+    <div class="col-12 col-md-6 col-lg-4">
+      <div class="offer-card p-3 position-relative">
+
+        <span class="badge discount-badge bg-danger">
+          –350 000 ₽
+        </span>
+
+        <img src="https://via.placeholder.com/420x230?text=Hyundai+Solaris"
+             class="img-fluid rounded mb-3">
+
+        <h5 class="fw-semibold">Hyundai Solaris</h5>
+        <p class="small text-muted mb-1">1.6 AT · 2023 · 123 л.с</p>
+
+        <p class="text-danger fw-bold fs-5 mb-3">
+          1 350 000 ₽
+          <span class="text-muted text-decoration-line-through small">
+            1 700 000 ₽
+          </span>
+        </p>
+
+        <button class="btn btn-red w-100"
+                data-bs-toggle="modal" data-bs-target="#buyModal">
+          Забронировать по скидке
+        </button>
+
+      </div>
+    </div>
+
+<section class="container my-5">
+
+  <h3 class="fw-bold mb-4">Популярные вопросы</h3>
+
+  <div class="accordion" id="faqAccordion">
+
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="q1">
+        <button class="accordion-button" type="button"
+                data-bs-toggle="collapse" data-bs-target="#a1">
+          Можно ли оформить кредит?
+        </button>
+      </h2>
+      <div id="a1" class="accordion-collapse collapse show"
+           data-bs-parent="#faqAccordion">
+        <div class="accordion-body">
+          Да! Оформление кредита занимает от 20 минут. Требуется паспорт и права.
+        </div>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="q2">
+        <button class="accordion-button collapsed" type="button"
+                data-bs-toggle="collapse" data-bs-target="#a2">
+          Делаете ли вы Trade-in?
+        </button>
+      </h2>
+      <div id="a2" class="accordion-collapse collapse"
+           data-bs-parent="#faqAccordion">
+        <div class="accordion-body">
+          Мы принимаем авто почти любой марки и состояния.
+        </div>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="q3">
+        <button class="accordion-button collapsed" type="button"
+                data-bs-toggle="collapse" data-bs-target="#a3">
+          Есть ли гарантия?
+        </button>
+      </h2>
+      <div id="a3" class="accordion-collapse collapse"
+           data-bs-parent="#faqAccordion">
+        <div class="accordion-body">
+          Да. Гарантия предоставляется согласно выбранной программе.
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</section>
+
+    <div class="col-12 col-md-6 col-lg-4">
+      <div class="offer-card p-3 position-relative">
+        <span class="badge discount-badge bg-danger">–250 000 ₽</span>
+        <img src="https://via.placeholder.com/420x230?text=Kia+Rio" class="img-fluid rounded mb-3">
+        <h5 class="fw-semibold">Kia Rio</h5>
+        <p class="small text-muted">1.4 AT · 2023 · 100 л.с</p>
+        <p class="text-danger fw-bold fs-5 mb-3">1 200 000 ₽ <span class="text-muted text-decoration-line-through small">1 450 000 ₽</span></p>
+        <button class="btn btn-red w-100" data-bs-toggle="modal" data-bs-target="#buyModal">Забронировать</button>
+      </div>
+    </div>
+
+    <div class="col-12 col-md-6 col-lg-4">
+      <div class="offer-card p-3 position-relative">
+        <span class="badge discount-badge bg-danger">–420 000 ₽</span>
+        <img src="https://via.placeholder.com/420x230?text=Skoda" class="img-fluid rounded mb-3">
+        <h5 class="fw-semibold">Skoda Rapid</h5>
+        <p class="small text-muted">1.6 AT · 2023 · 110 л.с</p>
+        <p class="text-danger fw-bold fs-5 mb-3">1 450 000 ₽ <span class="text-muted text-decoration-line-through small">1 870 000 ₽</span></p>
+        <button class="btn btn-red w-100" data-bs-toggle="modal" data-bs-target="#buyModal">Забронировать</button>
+      </div>
+    </div>
+
+  </div>
+
+</section>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+
+<script src="script.js"></script>
+
+</body>
+
+<section class="container my-5">
+  <h3 class="fw-bold mb-3">Об автосалоне ABC</h3>
+  <p class="text-muted">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse pulvinar...
+  </p>
+</section>
+
+<section class="position-relative">
+  <img src="https://via.placeholder.com/1920x500?text=MAP"
+       class="w-100 map-img">
+
+  <div class="contact-card p-4 bg-white shadow-md">
+    <p class="fw-bold mb-1">
+      🏢 ABC AUTO, 39 км МКАД, вл61
+    </p>
+    <p class="small mb-1">+7 (800) 551-94-81</p>
+    <p class="small mb-1">+7 (495) 292-84-07</p>
+    <p class="small text-muted mb-3">Ежедневно 09:00 – 21:00</p>
+
+    <button class="btn btn-red w-100">
+      Как до нас добраться →
+    </button>
+  </div>
+</section>
+
+<section class="pre-footer py-4 mt-4">
+  <div class="container">
+    <div class="row text-center text-md-start gy-3">
+      <div class="col-6 col-md"><a href="#" class="footer-nav">Каталог авто</a></div>
+      <div class="col-6 col-md"><a href="#" class="footer-nav">Авто с пробегом</a></div>
+      <div class="col-6 col-md"><a href="#" class="footer-nav">Кредит и рассрочка</a></div>
+      <div class="col-6 col-md"><a href="#" class="footer-nav">Спецпредложения</a></div>
+      <div class="col-6 col-md"><a href="#" class="footer-nav">Trade-In</a></div>
+    </div>
+  </div>
+</section>
+
+
+<footer class="footer-bg text-white m-0 pt-5">
+
+  <div class="container">
+    <div class="row gy-4">
+
+      <div class="col-12 col-md-3 footer-col">
+        <h6 class="footer-title" data-bs-toggle="collapse" data-bs-target="#ft-1">
+          Каталог авто
+        </h6>
+        <ul id="ft-1" class="footer-list collapse collapse-md show">
+          <li><a href="#">Kia</a></li>
+          <li><a href="#">Hyundai</a></li>
+          <li><a href="#">Volkswagen</a></li>
+          <li><a href="#">Skoda</a></li>
+        </ul>
+      </div>
+
+      <div class="col-12 col-md-3 footer-col">
+        <h6 class="footer-title" data-bs-toggle="collapse" data-bs-target="#ft-2">
+          Контакты
+        </h6>
+        <ul id="ft-2" class="footer-list collapse collapse-md show">
+          <li>📞 +7 (800) 551-94-81</li>
+          <li>📍 Москва, 39 км МКАД, вл61</li>
+          <li><a href="#">Обратный звонок</a></li>
+        </ul>
+      </div>
+
+      <div class="col-12 col-md-3 mt-auto">
+        <img src="https://via.placeholder.com/140x50?text=Yandex+5.0"
+             class="img-fluid">
+      </div>
+
+    </div>
+
+    <hr class="my-4 opacity-25">
+
+    <p class="small opacity-75 pb-3 mb-0">
+      © 2024 Автосалон “ABC AUTO“ · Официальный дилер
+    </p>
+
+  </div>
+</footer>
+
+</html>
